@@ -11,16 +11,16 @@ namespace Arrayex1
     {
         static void Main(string[] args)
         {
-            /*
-            FileStream fsa = File.Create("a.txt");
-            FileInfo file = new FileInfo("b.txt");
-            FileStream fsb = file.Create();
 
-            fsa.Close();
-            fsb.Close();
-            File.Copy("a.txt", "c.txt");
-            FileInfo dst = file.CopyTo("d.txt");
-            */
+            //FileStream fsa = File.Create("a.txt");
+            //FileInfo file = new FileInfo("b.txt");
+            //FileStream fsb = file.Create();
+
+            //fsa.Close();
+            //fsb.Close();
+            //File.Copy("a.txt", "c.txt");
+            //FileInfo dst = file.CopyTo("d.txt");
+            
             int[] num;
             int[,] num3;
             int[,,] num4;
@@ -53,7 +53,14 @@ namespace Arrayex1
                 }
                 Console.WriteLine(" ");
             }
-
+            int[] arrdata = new int[5];
+            Console.WriteLine(arrdata.Length);//배열의 갯수
+            int[,,] arrdata2 = new int[3,4,5];
+            Console.WriteLine(arrdata2.Length);//배열의 갯수
+            /*
+            string path = @"C:\Users\KICT-06\Desktop\Unity/data_large.txt";
+            string testValue = System.IO.File.ReadAllText(path);
+            Console.Write(testValue);*/
         }
     }
 }
