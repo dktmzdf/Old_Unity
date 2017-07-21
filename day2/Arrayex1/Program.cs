@@ -20,7 +20,7 @@ namespace Arrayex1
             //fsb.Close();
             //File.Copy("a.txt", "c.txt");
             //FileInfo dst = file.CopyTo("d.txt");
-            
+            /*
             int[] num;
             int[,] num3;
             int[,,] num4;
@@ -57,10 +57,57 @@ namespace Arrayex1
             Console.WriteLine(arrdata.Length);//배열의 갯수
             int[,,] arrdata2 = new int[3,4,5];
             Console.WriteLine(arrdata2.Length);//배열의 갯수
-            /*
+            */
+
+            int DataCount = 0,DataCol=0;
+            char delimiterChar = ',';
+            double[,] dData;
+
             string path = @"C:\Users\KICT-06\Desktop\Unity/data_large.txt";
-            string testValue = System.IO.File.ReadAllText(path);
-            Console.Write(testValue);*/
+            string line;
+            FileInfo DataFile = new FileInfo(path);
+            
+            if (DataFile.Exists)
+            {
+                int i=0, j=0;
+                StreamReader readDataLine = new System.IO.StreamReader(path);
+                line = readDataLine.ReadLine();
+                DataCol = Convert.ToInt32(line);
+                line = readDataLine.ReadLine();
+                DataCount = Convert.ToInt32(line);
+                dData = new double[DataCount, DataCol];
+                
+                while ((line = readDataLine.ReadLine()) != null)
+                {
+                    string[] tempString;
+                    tempString = line.Split(delimiterChar);
+                    for(j=0;j< DataCol; j++) {
+                        dData[i, j] = Convert.ToDouble(tempString[j]);
+                    }
+                    j = 0;
+                    i++;
+                }
+                Console.WriteLine(dData[0,0]);
+                Console.WriteLine(dData[1, 0]);
+                Console.WriteLine(dData[2, 0]);
+                readDataLine.Close();
+                double tempValue=0;
+                for (i = 0; i < DataCount; i++)
+                {
+                    for (j = 0; j < DataCol; j++)
+                    {
+                        tempValue += dData[i, j];
+                    }
+                   
+                }
+                Console.WriteLine(tempValue);
+            }
+            else
+            {
+                Console.WriteLine("존재하지 않습니다.");
+            }
+            
+            
         }
     }
 }
