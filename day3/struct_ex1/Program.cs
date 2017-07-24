@@ -58,9 +58,8 @@ namespace struct_ex1
             Hero spiderman;
             spiderman.hp = 100;
             spiderman.mp = 100;
-            spiderman.init_data();
-            spiderman.print();
-            
+            Console.WriteLine("aaa{0}bbb{1}", spiderman.hp, spiderman.mp);
+
         }
     }
 }
