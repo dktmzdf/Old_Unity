@@ -12,19 +12,25 @@ using System.Threading.Tasks;
 //객체가 만들어진 이후에는 생성자는 호출이 안된다.
 //생성자 -> 초기화 메서드
 //형식=> 리턴타입(x) 메서드명(클래스이름) 파라미터;
-class A
+class A1
 {
     public int m_a;
-    public A(int a)//메서드인데 리턴타입이 없는
+    public A1(int a)//메서드인데 리턴타입이 없는
     //권한   메서드이름
     {
         m_a=a;
     }//생성과 초기화는 클래스 외부에서 접근 가능하도록 권한 public
-    public A()
+    public A1()
     {
         m_a = 10;
     }
-    ~A()
+
+
+    
+    /// ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+    ~A1()
+
     {
 
     }
@@ -34,6 +40,42 @@ class A
         Console.WriteLine("m_a : " + m_a);
     }
 }
+class A
+{
+    public int m_a;
+
+    //소멸자 객체가 파괴될때 호출되는 메서드(알아서 호출됨)
+    //사용자가 호출하지는 않음
+
+    //형태 ~클래스 이름 =>중복정의 필요 없음(파괴되는 상황이라서) 리턴타입도 필요없음
+    //
+    ~A()
+
+    {
+        //객체의 파괴시 처리할 루틴
+        Console.WriteLine("으앙 쥬금");
+    }
+    //실제로는 소멸자를 세팅하거나 코딩하는경우는 별로 없음
+    //클래스 외부에서 호출여부(x)
+    public void showdata()
+    {
+        Console.WriteLine("m_a : " + m_a);
+    }
+}
+namespace class_ex3cd
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            A ma = new A();
+            Console.Write("12321312123312123123312321");
+            Console.WriteLine("22222");
+        }
+    }
+}
+
+/*
 namespace class_ex3cd
 {
     class Program
@@ -51,3 +93,4 @@ namespace class_ex3cd
         }
     }
 }
+*/
