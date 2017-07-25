@@ -3,65 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Stack;
 
 namespace QuickSort
 {
     class Program
     {
         //배열이 왜 스택이 됬지?..
-        struct NumArray
-        {
-            public int[] NumData;
-            private int top;
-            public int get_Top()
-            {
-                return top;
-            }
-            public void fileToArray()
-            {
-
-            }
-            public void init_Array(int size)
-            {
-                top = 0;
-                NumData = new int[size];
-                for (int i=0; i<size; i++)
-                {
-                    NumData[i] = int.MaxValue;
-                }
-            }
-            public void insert_Array(int insertNum)
-            {
-                if (NumData[top] == int.MaxValue) NumData[top] = insertNum;
-                else
-                {
-                    top++;
-                    NumData[top] = insertNum;
-                }
-                top++;
-            }
-            public void delete_Array()
-            {
-                NumData[top] = int.MaxValue;
-                top--;
-            }
-            public void delete_Array(int deleteLoc)
-            {
-                if (deleteLoc < top) {
-                    if (NumData[deleteLoc] != int.MaxValue)
-                    {
-                        NumData[deleteLoc] = int.MaxValue;
-                        for(int i =deleteLoc; i<=top; i++)
-                        {
-                            NumData[i] = NumData[i + 1];
-                        }
-                        top--;
-                    }
-                }
-                
-            }
-        }
-
+        
         static void QuickSort(int []Data, int left,int right)
         {
             //pivot 선정
@@ -121,17 +70,17 @@ namespace QuickSort
         }
         static void Main(string[] args)
         {
-            NumArray Data;
-            Data = new NumArray();
-            Data.init_Array(8);
-            Data.insert_Array(10);
-            Data.insert_Array(11);
-            Data.insert_Array(19);
-            Data.insert_Array(1);
-            Data.insert_Array(50);
-            Data.insert_Array(31);
-            Data.insert_Array(42);
-            Data.insert_Array(7);
+            intStack Data;
+            Data = new intStack(8);
+           
+            Data.insert_Stack(10);
+            Data.insert_Stack(11);
+            Data.insert_Stack(19);
+            Data.insert_Stack(1);
+            Data.insert_Stack(50);
+            Data.insert_Stack(31);
+            Data.insert_Stack(42);
+            Data.insert_Stack(7);
 
             QuickSort(Data.NumData,0,Data.get_Top());
             ArrayCheck(Data.NumData);
