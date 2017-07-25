@@ -43,6 +43,7 @@ namespace class_copy
             copy.data1 = 123;
             Console.WriteLine(source.data1);
 
+            
         }
     }
 }
