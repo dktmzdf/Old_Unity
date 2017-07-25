@@ -71,6 +71,8 @@ namespace class_ex3cd
             A ma = new A();
             Console.Write("12321312123312123123312321");
             Console.WriteLine("22222");
+            ma = null;
+            
         }
     }
 }
