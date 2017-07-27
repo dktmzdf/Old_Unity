@@ -70,20 +70,22 @@ namespace QuickSort
         }
         static void Main(string[] args)
         {
-            intStack Data;
-            Data = new intStack(8);
+            Stacks<int> Datas;
+            Datas = new Stacks<int>(8);
            
-            Data.insert_Stack(10);
-            Data.insert_Stack(11);
-            Data.insert_Stack(19);
-            Data.insert_Stack(1);
-            Data.insert_Stack(50);
-            Data.insert_Stack(31);
-            Data.insert_Stack(42);
-            Data.insert_Stack(7);
+            Datas.Push(10);
+            Datas.Push(11);
+            Datas.Push(19);
+            Datas.Push(1);
+            Datas.Push(50);
+            Datas.Push(31);
+            Datas.Push(42);
+            Datas.Push(7);
 
-            QuickSort(Data.NumData,0,Data.get_Top());
-            ArrayCheck(Data.NumData);
+            int[] SortData = Datas.ReturnStack();
+            Console.WriteLine(SortData[3]);
+            //QuickSort(Data.NumData,0,Data.get_Top());
+            //ArrayCheck(Data.NumData);
         }
     }
 }
