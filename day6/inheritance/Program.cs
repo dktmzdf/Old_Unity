@@ -100,6 +100,24 @@ class Sub2: Delivery
     }
 }
 
+
+//자료형앞 권한 제한 형식
+
+class nogive
+{
+    static int a;
+    public int num;
+}
+sealed class giveme : nogive
+{
+    
+}
+/*
+class veerygive : giveme
+{
+
+}*/
+
 class Program
 {
     static void Main()
