@@ -92,7 +92,8 @@ namespace MergeSort
             Datas.Push(42);
             Datas.Push(7);
             
-            int[] SortData = new int[Datas.Get_Top()];
+            int[] SortData;
+            SortData = new int[Datas.Get_Top()];
             Datas.ReturnStack(ref SortData);
 
             printArray(SortData);

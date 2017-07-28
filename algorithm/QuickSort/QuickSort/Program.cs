@@ -82,8 +82,13 @@ namespace QuickSort
             Datas.Push(42);
             Datas.Push(7);
 
-            int[] SortData = Datas.ReturnStack();
+            int[] SortData;
+            SortData = new int[Datas.Get_Top()];
+            Datas.ReturnStack(ref SortData);
+
+           
             Console.WriteLine(SortData[3]);
+           
             //QuickSort(Data.NumData,0,Data.get_Top());
             //ArrayCheck(Data.NumData);
         }
