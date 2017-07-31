@@ -46,6 +46,31 @@ namespace ArrayList_ex1
                 Console.Write("{0} ",list[i]);
             }
             Console.WriteLine();
+
+            Queue que = new Queue();
+            que.Enqueue(1);
+            que.Enqueue(2);
+            que.Enqueue(3);
+            que.Enqueue(4);
+            que.Enqueue(5);
+            while(que.Count>0)
+            {
+                Console.WriteLine(que.Dequeue());
+            }
+
+            Hashtable ht = new Hashtable();
+            ht["하나"] = "one";
+            ht["둘"] = "two";
+            ht["셋"] = "three";
+            ht["넷"] = "four";
+            ht["다섯"] = "five";
+
+            Console.WriteLine(ht["하나"]);
+            Console.WriteLine(ht["둘"]);
+            Console.WriteLine(ht["셋"]);
+            Console.WriteLine(ht["넷"]);
+            Console.WriteLine(ht["다섯"]);
+
         }
     }
 }
