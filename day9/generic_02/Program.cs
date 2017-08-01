@@ -15,25 +15,49 @@ using System.Threading.Tasks;
 *   }
 * 
 */
+class connector<T>
+{
+    public string connect(T a, T b)
+    {
+
+        return a.ToString() + b.ToString();
+    }
+}
+
 class A
 {
     public int m_x;
     public int m_y;
+    public float m_z;
+    public float m_t;
 
 }
 
-class A <G>//<> 안에 단어는 중요하지 않음
+class A <G,S>//<> 안에 단어는 중요하지 않음 그리고 일반 자료형은 1개 이상 올수 있음 구분을 위해 ','을 사용
 {
     public G m_x;
     public G m_y;
+    //public float m_z; //보통 변수가 옴
+    public S m_z;
+    public S m_t;
 }
-
+/*
+ * 사용
+ * 클래스형<일반화 키워드> 변수 = new 생성자
+ * A<int,float> = new A<int,float>();
+ */ 
 namespace generic_02
 {
     class Program
     {
         static void Main(string[] args)
         {
+            A<int, float> a = new A<int, float>();
+            a.m_x = 1;
+            a.m_t = 3.14f;
+
+            connector<int> c = new connector<int>();
+            Console.WriteLine(c.connect(123,456));
         }
     }
 }
