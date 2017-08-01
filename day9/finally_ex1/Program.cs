@@ -40,14 +40,18 @@ namespace finally_ex1
                 int dividend = Convert.ToInt32(temp);
                 Console.WriteLine("{0}/{1} = {2}",divisor,dividend,Divide(divisor,dividend));
             }
-            catch(FormatException e)
+            catch(Exception e)
+            {
+                Console.WriteLine(e);
+            }
+            /*catch(FormatException e)
             {
                 Console.WriteLine("에러 : " + e.Message);
             }
             catch (DivideByZeroException e)
             {
                 Console.WriteLine("에러 : " + e.Message);
-            }
+            }*/
             finally
             {
                 Console.WriteLine("program end");
